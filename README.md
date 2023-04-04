@@ -1,6 +1,6 @@
 # Vite Svelte Transcrypt
 
-Preprocessor for blocks of Python in Svelte templates (using Vite and Transcrypt)
+[proof of concept] Preprocessor for blocks of Python in Svelte templates (using Vite and Transcrypt)
 
 ```bash
 pip install transcrypt
@@ -60,13 +60,36 @@ you can use the global keyword:
 <script lang="python">`
 count = 0
 
-def increment():
-    global window # optional
-    global document # optional
-    window.alert("You can now call window's methods or perform DOM manipulation with document!")
-`
+def interop`()
+:
+global
+window
+#
+optional
+global
+document
+#
+optional
+window.alert("You can now call window's methods or perform DOM manipulation with document!")
+        `
+
 </script>
 ```
+
+### Caveats
+
+This whole project is **just a proof of concept** and should NOT be used in production!
+The whole Transcrypt JS runtime is included for every `<script>` with `lang=python`, so unless Vite does a great job of
+optimizing this, there is a lot of duplicate code. It is also of course much slower than just using JS.
+Additionally, Transcrypt does not support a lot of Python libraries at this point, so most useful imports will not work.
+
+This module also creates a lot of junk files in the `.transcrypt-build` directory, since the output is used AFTER the
+preprocess function ends.
+So cleanup at the end of this function is impossible, since the files are still needed later on.
+If this module was used in a big project, this junk folder could get quite big after a while.
+
+When working with JS objects from Python, it still expects the 'new' keyword. Since Python does not have this,
+Transcrypt provides the `__new__` helper:
 
 ```sveltehtml
 
