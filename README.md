@@ -60,19 +60,12 @@ you can use the global keyword:
 <script lang="python">`
 count = 0
 
-def interop`()
-:
-global
-window
-#
-optional
-global
-document
-#
-optional
-window.alert("You can now call window's methods or perform DOM manipulation with document!")
-        `
-
+def interop():
+    global window # optional
+    global document # optional
+    
+    window.alert("You can now call window's methods or perform DOM manipulation with document!")
+`
 </script>
 ```
 
