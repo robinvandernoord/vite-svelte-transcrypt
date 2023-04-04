@@ -1,0 +1,36 @@
+{
+    "name": "vite-svelte-transcrypt",
+    "version": "1.0.0",
+    "description": "Preprocessor for blocks of Python in Svelte templates (using Vite and Transcrypt)",
+    "type": "module",
+    "main": "index.js",
+    "module": "index.js",
+    "scripts": {
+        "test": "node ./test.js",
+        "pretty": "prettier --write . --tab-width 4 --no-semi"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/trialandsuccess/vite-svelte-transcrypt.git"
+    },
+    "keywords": [
+        "Python",
+        "Svelte",
+        "Vite",
+        "Transcrypt"
+    ],
+    "author": "Robin van der Noord",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/trialandsuccess/vite-svelte-transcrypt/issues"
+    },
+    "homepage": "https://github.com/trialandsuccess/vite-svelte-transcrypt#readme",
+    "dependencies": {
+        "svelte-preprocess": "^5.0.0",
+        "vite-svelte-transcrypt": "^1.0.0"
+    },
+    "devDependencies": {
+        "chalk": "^5.2.0",
+        "prettier": "^2.8"
+    }
+}
